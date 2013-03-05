@@ -215,6 +215,9 @@ def Episode(title, url, video_type, page_num):
         air_date = episode.xpath('.//div[@class="video-rollover-container-player-timer-text"]/text()')[0].strip()
         originally_available_at = Datetime.ParseDate(air_date).date()
         new_title = episode.xpath('.//img/@title')[0]
+        premium = episode.xpath('.//div[@class="video-play-symbol is-premium"]')
+        if len(premium) > 0:
+            new_title = 'Premium - ' + new_title
         if video_type == 'FullEp':
             season_match = re.search(r'/season-(\d+)/', new_url)
             season = int(season_match.group(1))
@@ -339,6 +342,9 @@ def Clip(title, url, video_type, clip_type, page_num):
         air_date = clip.xpath('.//div[@class="video-rollover-container-player-timer-text"]/text()')[0].strip()
         originally_available_at = Datetime.ParseDate(air_date).date()
         new_title = clip.xpath('.//img/@title')[0]
+        premium = clip.xpath('.//div[@class="video-play-symbol is-premium"]')
+        if len(premium) > 0:
+            new_title = 'Premium - ' + new_title        
         duration = None
         duration_element = clip.xpath('.//div[@class="video-rollover-container-player-date-text"]')
         if duration_element:

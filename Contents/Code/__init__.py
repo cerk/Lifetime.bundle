@@ -37,7 +37,7 @@ def MainMenu():
 
     html = HTML.ElementFromURL(LT_VIDEO)
     
-    for header in html.xpath('//h3'):
+    for header in html.xpath('//h3[not(@id)]'):
         title = header.xpath('./a/text()')[0]
         oc.add(DirectoryObject(key=Callback(Video, title=title), title=title))
 

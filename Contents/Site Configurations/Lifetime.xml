@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site site="http://www.mylifetime.com"
+	plugin="http://servicesaetn-a.akamaihd.net/pdk5/pdk5.1.3/web/pdk/swf/flvPlayer.swf"
+    initialState="playing"
+	version="1.0">
+    
+    <!-- Can't get the play/pause button to work so commented them out -->
+    
+   	<!-- PLAYING -->
+    <!--
+    <state name="playing">
+		<event>
+			<condition>
+				<command name="pause" />
+			</condition>
+			<action>
+                <move x="22" y="416" />
+                <pause time="100" />
+				<click x="22" y="416" />
+				<goto state="paused" />
+			</action>
+		</event>
+	</state>
+    -->
+    
+   	<!-- PAUSED -->
+    <!--
+    <state name="paused">
+		<event>
+			<condition>
+				<command name="play" />
+			</condition>
+			<action>
+                <move x="22" y="416" />
+                <pause time="100" />
+				<click x="22" y="416" />
+				<goto state="playing" />
+			</action>
+		</event>
+	</state>
+    -->
+</site>
